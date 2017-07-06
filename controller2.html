@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pong</title>
+    <style type="text/css">
+        *  {
+            margin: 0;
+            padding: 0;
+        }
+
+        #top {
+            position relative;
+            height: 50vh;
+            width: 100vw;
+            background-color: green;
+
+            -webkit-user-select: none;  /* Chrome all / Safari all */
+            -moz-user-select: none;     /* Firefox all */
+            -ms-user-select: none;      /* IE 10+ */
+            user-select: none;          /* Likely future */
+        }
+
+        #bottom {
+            position relative;
+            background-color: red;
+            top: 50vh;
+            height: 50vh;
+            width: 100vw;
+
+            -webkit-user-select: none;  /* Chrome all / Safari all */
+            -moz-user-select: none;     /* Firefox all */
+            -ms-user-select: none;      /* IE 10+ */
+            user-select: none;          /* Likely future */
+        }
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+    <div id="bottom"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="/pong.min.js"></script>
+    <script type="text/javascript">
+        var controller = new Controller('controller2', new Socket().io);
+    </script>
+</body>
+</html>

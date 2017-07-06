@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pong</title>
+</head>
+<body>
+    <canvas class="game"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="/pong.min.js"></script>
+    <script type="text/javascript">
+        var game = new Pong(new Socket().io);
+
+        game.start();
+    </script>
+</body>
+</html>
