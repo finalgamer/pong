@@ -4,15 +4,15 @@ class Controller {
     down = document.getElementById('bottom');
 
     constructor(name, io) {
-        this.up.addEventListener('mousedown', (event) => {
-            io.emit(name, -1);
-            console.log(-1);
-        });
+        // this.up.addEventListener('mousedown', (event) => {
+        //     io.emit(name, -1);
+        //     console.log(-1);
+        // });
 
-        this.up.addEventListener('mouseup', (event) => {
-            io.emit(name, 0);
-            console.log(0);
-        });
+        // this.up.addEventListener('mouseup', (event) => {
+        //     io.emit(name, 0);
+        //     console.log(0);
+        // });
 
         this.up.addEventListener('touchstart', (event) => {
             io.emit(name, -1);
@@ -26,22 +26,22 @@ class Controller {
 
         // ---
 
-        this.down.addEventListener('mousedown', (event) => {
+        // this.down.addEventListener('mousedown', (event) => {
+        //     io.emit(name, 1);
+        //     console.log(1);
+        // });
+
+        // this.down.addEventListener('mouseup', (event) => {
+        //     io.emit(name, 0);
+        //     console.log(0);
+        // });
+
+        this.down.addEventListener('touchstart', (event) => {
             io.emit(name, 1);
             console.log(1);
         });
 
-        this.down.addEventListener('mouseup', (event) => {
-            io.emit(name, 0);
-            console.log(0);
-        });
-
-        this.up.addEventListener('touchstart', (event) => {
-            io.emit(name, 1);
-            console.log(1);
-        });
-
-        this.up.addEventListener('touchend', (event) => {
+        this.down.addEventListener('touchend', (event) => {
             io.emit(name, 0);
             console.log(0);
         });

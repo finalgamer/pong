@@ -1,6 +1,6 @@
 class Puck {
     radius = 10
-    xVelocity = 3;
+    xVelocity = 5;
     yVelocity = 0;
 
     constructor(game) {
@@ -32,12 +32,12 @@ class Puck {
 
         if(this.hitsPlayer(this.game.players[0])) {
             this.xVelocity = -1 * this.xVelocity;
-            this.yVelocity = this.x - this.game.players[0].x;
+            this.yVelocity = (this.y - this.game.players[0].y + (this.game.players[0].height / 2)) / 35;
         }
 
         if(this.hitsPlayer(this.game.players[1])) {
             this.xVelocity = -1 * this.xVelocity;
-            this.yVelocity = this.x - this.game.players[1].x;
+            this.yVelocity = (this.y - this.game.players[1].y + (this.game.players[1].height / 2)) / 35 ;
         }
     }
 
@@ -51,6 +51,7 @@ class Puck {
     reset() {
         this.x = game.width / 2;
         this.y = game.height / 2;
+        this.yVelocity = 0;
     }
 
     hitsPlayer(player) {
